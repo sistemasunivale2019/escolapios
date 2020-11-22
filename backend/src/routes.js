@@ -1,12 +1,14 @@
 const express = require("express");
 const CandidatoController = require("./controllers/Candidate");
-const UsuarioController = require("./controllers/Usuario");
+const UserController = require("./controllers/User");
+const AuthController = require("./controllers/Auth");
 
 const router = express.Router();
 
-router.post("/createUser", UsuarioController.store);
-router.get("/login", UsuarioController.show);
-router.get("/lista-usuarios", UsuarioController.index);
+router.post("/signup", UserController.store);
+router.get("/auth", AuthController.show);
+router.get("/lista-usuarios", UserController.index);
+router.delete("/delete-user", UserController.delete);
 router.post("/createCandidate", CandidatoController.store);
 router.get("/lista-candidatos", CandidatoController.index);
 

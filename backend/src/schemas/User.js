@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const crypto = require("crypto");
 
-const UsuarioSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     email: {
       type: String,
@@ -21,6 +21,6 @@ const UsuarioSchema = new mongoose.Schema(
   }
 );
 
-const Usuario = mongoose.model("Usuario", UsuarioSchema);
+const User = mongoose.model("User", UserSchema);
 
-module.exports = Usuario;
+module.exports = User;
