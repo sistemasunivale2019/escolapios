@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  width: 100%;
+  width: ${(props) => (props.width ? props.width : "100%")};
   height: 35px;
   color: white;
   border: 0;
@@ -17,5 +17,12 @@ export const Button = styled.button`
 
   &:hover {
     background: rgb(17, 82, 147);
+  }
+
+  &:disabled {
+    color: rgba(0, 0, 0, 0.26);
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.12);
+    cursor: default;
   }
 `;

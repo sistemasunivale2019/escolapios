@@ -11,13 +11,15 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   width: 90%;
+  padding: 10px;
   max-width: 340px;
   height: 250px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  border: 1px solid red;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
 `;
 
 export const Title = styled.h1`
@@ -36,17 +38,30 @@ export const ButtonGroup = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
 
 export const LinkButton = styled(Link)`
-  background-color: #fff;
-  border-color: #ccc;
-  color: #333;
+  color: rgba(0, 0, 0, 0.87);
+  border: 0;
+  color: black;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  background-color: #e0e0e0;
+  text-decoration: none;
+  width: 120px;
+  height: 35px;
+  transition: background 250ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
 
   &:hover {
     background-color: #e6e6e6;
-    border-color: #adadad;
-    color: #333;
   }
 `;
