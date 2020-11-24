@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const crypto = require("crypto");
+const bcrypt = require("bcrypt");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -13,13 +13,18 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       select: false,
-      set: (value) => crypto.createHash("md5").update(value).digest("hex"),
     },
   },
   {
     timestamps: true,
   }
 );
+
+UserSchema.pre("save", async function (next) {
+  const hash = await bcrypt.hash(this.senha, 10);
+  this.senha = hash;
+  next();
+});
 
 const User = mongoose.model("User", UserSchema);
 
