@@ -5,31 +5,30 @@ import { Backdrop } from "../../components/Backdrop";
 import { Container, Nav, Avatar, Perfil, NavBar, Items } from "./style";
 
 const Home = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   return (
-    <Backdrop show={show}>
-      <Container>
-        <Nav>
-          <div style={{ width: "100px", height: "80px" }}>
-            <img src={LogoItaka} alt="Logo Itaka" width="100%" height="100%" />
-          </div>
-          <Perfil>
-            <Avatar>
-              <img src={foto} alt="avatar" />
-            </Avatar>
-            <span>Pedro</span>
-          </Perfil>
-        </Nav>
-        <NavBar>
-          <Items>
-            <li>USUÁRIOS</li>
-            <li>CANDIDATOS</li>
-            <li>ATIVIDADES</li>
-            <li>VOLUNTÁRIOS</li>
-          </Items>
-        </NavBar>
-      </Container>
-    </Backdrop>
+    <Container>
+      <Backdrop show={show} />
+      <Nav>
+        <div style={{ width: "100px", height: "80px" }}>
+          <img src={LogoItaka} alt="Logo Itaka" width="100%" height="100%" />
+        </div>
+        <Perfil>
+          <Avatar>
+            <img src={foto} alt="avatar" />
+          </Avatar>
+          <span>Pedro</span>
+        </Perfil>
+      </Nav>
+      <NavBar>
+        <Items>
+          <li>USUÁRIOS</li>
+          <li>CANDIDATOS</li>
+          <li>ATIVIDADES</li>
+          <li>VOLUNTÁRIOS</li>
+        </Items>
+      </NavBar>
+    </Container>
   );
 };
 
